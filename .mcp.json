@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "webiny": {
+      "command": "npx",
+      "args": [
+        "webiny-mcp",
+        "serve",
+        "--additional-skills=./my-skills"
+      ]
+    }
+  }
+}
