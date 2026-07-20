@@ -117,6 +117,12 @@ const MODELS = [
         validation: [{ name: "required", message: "State is required" }],
       },
       {
+        fieldId: "country",
+        type: "text",
+        label: "Country",
+        validation: [{ name: "required", message: "Country is required" }],
+      },
+      {
         fieldId: "venue",
         type: "text",
         label: "Venue",
@@ -143,7 +149,7 @@ const MODELS = [
         help: "Link to ticket/RSVP page",
       },
     ],
-    layout: [["date"], ["city", "state"], ["venue"], ["status"], ["rsvpUrl"]],
+    layout: [["date"], ["city", "state", "country"], ["venue"], ["status"], ["rsvpUrl"]],
     titleFieldId: "venue",
   },
   {
@@ -171,10 +177,10 @@ const MODELS = [
         label: "Cover Image",
       },
       {
-        fieldId: "spotifyEmbedUrl",
+        fieldId: "embedUrl",
         type: "text",
-        label: "Spotify Embed URL",
-        help: "e.g. https://open.spotify.com/embed/album/abc123",
+        label: "Embed URL",
+        help: "Spotify embed URL e.g. https://open.spotify.com/embed/album/YOUR_ALBUM_ID?utm_source=generator",
       },
       {
         fieldId: "spotifyUrl",
@@ -189,7 +195,7 @@ const MODELS = [
         help: "Direct link to album on Apple Music",
       },
     ],
-    layout: [["title", "year"], ["coverImage"], ["spotifyEmbedUrl"], ["spotifyUrl", "appleMusicUrl"]],
+    layout: [["title", "year"], ["coverImage"], ["embedUrl"], ["spotifyUrl", "appleMusicUrl"]],
     titleFieldId: "title",
   },
   {
@@ -271,9 +277,110 @@ const MODELS = [
         type: "text",
         label: "TikTok URL",
       },
+      {
+        fieldId: "favicon",
+        type: "file",
+        label: "Favicon",
+        help: "Site favicon (ICO, PNG, or SVG)",
+      },
     ],
-    layout: [["artistName"], ["copyright"], ["instagramUrl"], ["spotifyUrl"], ["appleMusicUrl"], ["youtubeUrl"], ["tiktokUrl"]],
+    layout: [["artistName"], ["copyright"], ["favicon"], ["instagramUrl"], ["spotifyUrl"], ["appleMusicUrl"], ["youtubeUrl"], ["tiktokUrl"]],
     titleFieldId: "artistName",
+  },
+  {
+    name: "About Content",
+    modelId: "aboutContent",
+    singularApiName: "AboutContent",
+    pluralApiName: "AboutContents",
+    description: "About section content (singleton - only one entry)",
+    fields: [
+      {
+        fieldId: "heading",
+        type: "text",
+        label: "Heading",
+        validation: [{ name: "required", message: "Heading is required" }],
+      },
+      {
+        fieldId: "body",
+        type: "long-text",
+        label: "Body",
+        validation: [{ name: "required", message: "Body is required" }],
+      },
+      {
+        fieldId: "image",
+        type: "file",
+        label: "Image",
+      },
+    ],
+    layout: [["heading"], ["body"], ["image"]],
+    titleFieldId: "heading",
+  },
+  {
+    name: "Contact Page",
+    modelId: "contactPageContent",
+    singularApiName: "ContactPageContent",
+    pluralApiName: "ContactPageContents",
+    description: "Content for the /contact page (singleton - only one entry)",
+    fields: [
+      {
+        fieldId: "image",
+        type: "file",
+        label: "Image",
+        help: "Featured image displayed beside the contact form (4:5 aspect ratio recommended)",
+      },
+    ],
+    layout: [["image"]],
+    titleFieldId: "image",
+  },
+  {
+    name: "New Release",
+    modelId: "newRelease",
+    singularApiName: "NewRelease",
+    pluralApiName: "NewReleases",
+    description: "Featured singles/EPs with embed player",
+    fields: [
+      {
+        fieldId: "title",
+        type: "text",
+        label: "Title",
+        validation: [{ name: "required", message: "Title is required" }],
+      },
+      {
+        fieldId: "releaseDate",
+        type: "datetime",
+        label: "Release Date",
+        validation: [{ name: "required", message: "Release Date is required" }],
+        settings: { type: "date" },
+      },
+      {
+        fieldId: "coverImage",
+        type: "file",
+        label: "Cover Image",
+      },
+      {
+        fieldId: "embedUrl",
+        type: "text",
+        label: "Embed URL",
+        help: "Spotify/Apple Music embed URL",
+        validation: [{ name: "required", message: "Embed URL is required" }],
+      },
+      {
+        fieldId: "type",
+        type: "text",
+        label: "Type",
+        help: "One of: single, ep, album",
+        validation: [
+          { name: "required", message: "Type is required" },
+          {
+            name: "pattern",
+            settings: { preset: "custom", regex: "^(single|ep|album)$" },
+            message: "Must be one of: single, ep, album",
+          },
+        ],
+      },
+    ],
+    layout: [["title", "type"], ["releaseDate"], ["coverImage"], ["embedUrl"]],
+    titleFieldId: "title",
   },
 ];
 

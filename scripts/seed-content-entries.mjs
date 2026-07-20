@@ -109,6 +109,12 @@ const ENTRIES = {
       tiktokUrl: "https://tiktok.com/@jameswilliamsmusic",
     },
   ],
+  aboutContent: [
+    {
+      heading: "About James",
+      body: "James Williams is a singer-songwriter based in Melbourne, Australia. Blending folk, indie, and soul, his music tells stories of love, growth, and finding your way home. With a voice that feels both intimate and expansive, James creates songs that stay with you long after the last note fades.",
+    },
+  ],
 };
 
 // --- Mutations ---
@@ -128,6 +134,7 @@ const MODEL_API_NAMES = {
   album: "Album",
   merchItem: "MerchItem",
   siteSettings: "SiteSettings",
+  aboutContent: "AboutContent",
 };
 
 async function createAndPublishEntry(modelId, data) {
