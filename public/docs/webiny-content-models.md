@@ -13,7 +13,7 @@ This document defines all content models needed in the Webiny Headless CMS to po
 | Field | Field Type | API Name | Required | Notes |
 |-------|-----------|----------|----------|-------|
 | Title | Text | `title` | Yes | Display name, e.g. "JAMESWILLIAMS" |
-| Tagline | Text | `tagline` | Yes | e.g. "A Symphony of the Pacific" |
+| Tagline | Text | `tagline` | No | e.g. "A Symphony of the Pacific" |
 | Social Handle | Text | `socialHandle` | Yes | e.g. "@JAMESWILLIAMSMUSIC" |
 | Background Image | File | `backgroundImage` | Yes | Upload hero photo or paste URL. Use Webiny File Manager. |
 
@@ -29,11 +29,11 @@ This document defines all content models needed in the Webiny Headless CMS to po
 
 ---
 
-## 2. Tour Date
+## 2. Show
 
-**Model Name:** Tour Date  
-**Model ID (API Name):** `TourDate`  
-**Description:** Upcoming tour dates and venues
+**Model Name:** Show  
+**Model ID (API Name):** `Show`  
+**Description:** Upcoming shows and venues
 
 | Field | Field Type | API Name | Required | Notes |
 |-------|-----------|----------|----------|-------|

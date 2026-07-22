@@ -58,7 +58,7 @@ const ENTRIES = {
       socialHandle: "@JAMESWILLIAMSMUSIC",
     },
   ],
-  tourDate: [
+  show: [
     {
       date: "2025-08-12",
       city: "Malibu",
@@ -121,7 +121,7 @@ const ENTRIES = {
 
 /**
  * Webiny auto-generates GraphQL mutations per model.
- * Model "tourDate" becomes "createTourDate" / "publishTourDate"
+ * Model "show" becomes "createShow" / "publishShow"
  */
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -130,7 +130,7 @@ function capitalize(str) {
 // Map modelId to singularApiName (must match what we used in seed-content-models)
 const MODEL_API_NAMES = {
   heroContent: "HeroContent",
-  tourDate: "TourDate",
+  show: "Show",
   album: "Album",
   merchItem: "MerchItem",
   siteSettings: "SiteSettings",

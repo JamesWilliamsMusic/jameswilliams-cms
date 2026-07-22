@@ -73,7 +73,7 @@ const MODELS = [
         fieldId: "tagline",
         type: "text",
         label: "Tagline",
-        validation: [{ name: "required", message: "Tagline is required" }],
+        validation: [],
       },
       {
         fieldId: "socialHandle",
@@ -91,11 +91,11 @@ const MODELS = [
     titleFieldId: "title",
   },
   {
-    name: "Tour Date",
-    modelId: "tourDate",
-    singularApiName: "TourDate",
-    pluralApiName: "TourDates",
-    description: "Upcoming tour dates and venues",
+    name: "Show",
+    modelId: "show",
+    singularApiName: "Show",
+    pluralApiName: "Shows",
+    description: "Upcoming shows and venues",
     fields: [
       {
         fieldId: "date",
