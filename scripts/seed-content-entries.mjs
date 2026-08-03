@@ -89,6 +89,7 @@ const ENTRIES = {
   album: [
     {
       title: "Golden Hour",
+      releaseDate: "2025-06-01",
       year: 2025,
       embedUrl: "https://open.spotify.com/embed/album/REPLACE_WITH_ALBUM_ID",
       spotifyUrl: "https://open.spotify.com/album/REPLACE_WITH_ALBUM_ID",
