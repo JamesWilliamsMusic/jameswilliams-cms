@@ -2,8 +2,12 @@ import React from "react";
 import { Infra } from "webiny/extensions";
 import { Cognito } from "@webiny/cognito";
 
-const CMS_CERTIFICATE_ARN =
-    "arn:aws:acm:us-east-1:986995923840:certificate/3c3a8360-a17b-48e7-b21f-4289383a4f22";
+// ACM certificate (us-east-1) for the admin custom domains. Kept out of the repo.
+const CMS_CERTIFICATE_ARN = process.env.WEBINY_CMS_CERTIFICATE_ARN;
+
+if (!CMS_CERTIFICATE_ARN) {
+    throw new Error("WEBINY_CMS_CERTIFICATE_ARN is not set. Set it before running any Webiny command.");
+}
 
 export const Extensions = () => {
     return (

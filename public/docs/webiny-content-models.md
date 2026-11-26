@@ -207,7 +207,7 @@ Once models are created and entries are published, the web app connects via:
 
 ```env
 # .env.local in jameswilliams-web
-WEBINY_API_URL=https://d3l3e5h3f27nk0.cloudfront.net/cms/read/en-US
+WEBINY_API_URL=https://<your-cloudfront-domain>/cms/read/en-US
 WEBINY_API_TOKEN=<your-api-token>
 ```
 
@@ -225,9 +225,9 @@ WEBINY_API_TOKEN=<your-api-token>
 ### GraphQL Endpoint Structure
 
 ```
-Read API:    https://d3l3e5h3f27nk0.cloudfront.net/cms/read/en-US
-Preview API: https://d3l3e5h3f27nk0.cloudfront.net/cms/preview/en-US
-Manage API:  https://d3l3e5h3f27nk0.cloudfront.net/cms/manage/en-US
+Read API:    https://<your-cloudfront-domain>/cms/read/en-US
+Preview API: https://<your-cloudfront-domain>/cms/preview/en-US
+Manage API:  https://<your-cloudfront-domain>/cms/manage/en-US
 ```
 
 The web app uses the **Read API** — it only returns published content entries.
