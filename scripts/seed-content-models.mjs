@@ -7,15 +7,20 @@
  * Run with: node --env-file=.env scripts/seed-content-models.mjs
  *
  * Required env vars (in .env):
- *   WEBINY_MANAGE_API_URL - e.g. https://d3l3e5h3f27nk0.cloudfront.net/cms/manage/en-US
+ *   WEBINY_MANAGE_API_URL - e.g. https://<your-cloudfront-domain>/cms/manage/en-US
  *   WEBINY_API_TOKEN      - API key with full Headless CMS manage permissions
  */
 
-const MANAGE_API_URL =
-  process.env.WEBINY_MANAGE_API_URL ||
-  "https://d3l3e5h3f27nk0.cloudfront.net/cms/manage/en-US";
+const MANAGE_API_URL = process.env.WEBINY_MANAGE_API_URL;
 
 const API_TOKEN = process.env.WEBINY_API_TOKEN;
+
+if (!MANAGE_API_URL) {
+  console.error(
+    "Error: WEBINY_MANAGE_API_URL is required (no default, to avoid seeding the wrong environment)."
+  );
+  process.exit(1);
+}
 
 if (!API_TOKEN) {
   console.error(
