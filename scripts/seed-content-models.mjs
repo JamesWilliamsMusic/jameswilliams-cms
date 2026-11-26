@@ -166,6 +166,13 @@ const MODELS = [
         validation: [{ name: "required", message: "Title is required" }],
       },
       {
+        fieldId: "releaseDate",
+        type: "datetime",
+        label: "Release Date",
+        validation: [{ name: "required", message: "Release Date is required" }],
+        settings: { type: "date" },
+      },
+      {
         fieldId: "year",
         type: "number",
         label: "Year",
@@ -195,7 +202,7 @@ const MODELS = [
         help: "Direct link to album on Apple Music",
       },
     ],
-    layout: [["title", "year"], ["coverImage"], ["embedUrl"], ["spotifyUrl", "appleMusicUrl"]],
+    layout: [["title", "releaseDate"], ["year"], ["coverImage"], ["embedUrl"], ["spotifyUrl", "appleMusicUrl"]],
     titleFieldId: "title",
   },
   {
