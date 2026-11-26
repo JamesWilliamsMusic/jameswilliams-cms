@@ -1,12 +1,12 @@
 {
 	"type": "module",
 	"dependencies": {
-		"@webiny/cli": "6.3.0",
-		"@webiny/cognito": "6.3.0",
-		"@webiny/mcp": "6.3.0",
+		"@webiny/cli": "6.5.2",
+		"@webiny/cognito": "6.5.2",
+		"@webiny/mcp": "6.5.2",
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
-		"webiny": "6.3.0"
+		"webiny": "6.5.2"
 	},
 	"devDependencies": {
 		"@types/node": "^24.12.2",
